@@ -1,0 +1,36 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Prepare site
+        run: |
+          mkdir public
+          cp -r HTML public/html
+          cp -r "HTML+CSS" public/html-css
+          cp -r "HTML+CSS+JS" public/html-css-js
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy
+        uses: actions/deploy-pages@v4
