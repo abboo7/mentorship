@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFlow Pro - Premium Landing Page</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8fafc;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #4f46e5;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #4f46e5;
+    }
+    .mobile-menu {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.freepik.com/free-vector/gradient-connection-background_52683-118589.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.9;
+    }
+    .cta-button {
+      background: white;
+      color: #4f46e5;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 6rem 0;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 4rem;
+      color: #1e293b;
+    }
+
+    /* Features */
+    .features {
+      background: white;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #f1f5f9;
+      padding: 2.5rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: transform 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-15px);
+    }
+    .card img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      object-fit: contain;
+    }
+    .card h3 {
+      margin: 1.5rem 0;
+      color: #4f46e5;
+      font-size: 1.6rem;
+    }
+
+    /* About */
+    .about {
+      background: #f8fafc;
+    }
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .about-img {
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: white;
+    }
+    .testimonial-card {
+      background: #f1f5f9;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .author {
+      font-weight: bold;
+      color: #4f46e5;
+    }
+
+    /* Pricing */
+    .pricing {
+      background: #f8fafc;
+    }
+    .pricing-card {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-10px);
+    }
+    .pricing-card.popular {
+      border: 3px solid #4f46e5;
+      transform: scale(1.05);
+    }
+    .price {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #4f46e5;
+      margin: 1.5rem 0;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin: 2rem 0;
+    }
+    .pricing-card li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .pricing-card li:last-child {
+      border: none;
+    }
+
+    /* FAQ */
+    .faq {
+      background: white;
+    }
+    .faq-item {
+      background: #f1f5f9;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      background: #e2e8f0;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.8rem;
+      transition: transform 0.3s;
+    }
+    .faq-question.active::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .faq-answer.active {
+      padding: 1.5rem;
+      max-height: 300px;
+    }
+
+    /* Contact */
+    .contact {
+      background: #f8fafc;
+    }
+    .form-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    form {
+      display: grid;
+      gap: 1.5rem;
+    }
+    input, textarea {
+      padding: 1.2rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 1.1rem;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 4px rgba(79,70,229,0.2);
+    }
+    button[type="submit"] {
+      background: #4f46e5;
+      color: white;
+      padding: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: #4338ca;
+    }
+    #form-message {
+      padding: 1.2rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+      margin-top: 1rem;
+    }
+    .success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+    .error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    /* Back to Top */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #4f46e5;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Footer */
+    footer {
+      background: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.4s ease;
+      }
+      .nav-links.active {
+        transform: translateY(0);
+      }
+      .mobile-menu {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 2.3rem;
+      }
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      .pricing .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">TechFlow</div>
+        <div class="nav-links" id="nav-links">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Build Professional Websites Faster Than Ever</h1>
+      <p>Create stunning, responsive landing pages with pure HTML, CSS, and JavaScript. Perfect for portfolios, startups, or product launches.</p>
+      <a href="#contact" class="cta-button">Start Building Today</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Powerful Features</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://www.pikpng.com/pngl/m/323-3237168_svg-websites-responsive-responsive-web-design-clipart.png" alt="Responsive Design Icon">
+          <h3>Responsive Design</h3>
+          <p>Looks perfect on any device — mobile, tablet, or desktop with modern Flexbox and Grid layouts.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1265/1265858.png" alt="Interactive Elements Icon">
+          <h3>Interactive Elements</h3>
+          <p>Smooth animations, form validation, FAQ accordion, and mobile menu — all with vanilla JavaScript.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1055/1055329.png" alt="Modern Styling Icon">
+          <h3>Modern Styling</h3>
+          <p>Clean gradients, shadows, hover effects, and professional typography.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1086/1086933.png" alt="Easy Customization Icon">
+          <h3>Easy Customization</h3>
+          <p>Single-file project — just edit text, colors, and content to make it your own.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2919/2919600.png" alt="SEO Friendly Icon">
+          <h3>SEO Friendly</h3>
+          <p>Semantic HTML, proper headings, and meta tags for better search engine visibility.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1042/1042347.png" alt="No Dependencies Icon">
+          <h3>No Dependencies</h3>
+          <p>Works offline with pure HTML/CSS/JS — no frameworks needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About TechFlow Pro</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>TechFlow Pro is designed as a complete learning project for web development students. It combines everything you've learned: semantic HTML structure, advanced CSS layouts (Flexbox, Grid, responsive design), and practical JavaScript (form handling, mobile menu, smooth scroll, FAQ accordion, back-to-top button).</p>
+          <p>Whether you're building a personal portfolio, a business landing page, or a product showcase, this template gives you a professional starting point.</p>
+          <p>Built with accessibility and performance in mind — fast loading, clean code, and mobile-first approach.</p>
+        </div>
+        <div>
+          <img src="https://media.istockphoto.com/id/1430393066/photo/creative-startup-and-team-webinar-on-laptop-for-professional-internet-communication-in-office.jpg?s=1024x1024&w=is&k=20&c=CI2i_Fl4d5B-0r9tuPsQjm8pcKxViOckpHJ_o7TVE_w=" alt="Diverse team of web developers collaborating" class="about-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2>What Students Say</h2>
+      <div class="grid">
+        <div class="testimonial-card">
+          <img src="https://img.freepik.com/free-photo/3d-cartoon-portrait-person-practicing-law-related-profession_23-2151419548.jpg" alt="Abebe K. avatar">
+          <p>"This project helped me understand how everything connects — HTML structure, CSS beauty, and JS magic!"</p>
+          <div class="author">- Abebe K., Beginner Developer</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://thumbs.dreamstime.com/b/beautiful-girl-female-programmer-occupation-jobs-programming-laptop-screen-code-behind-vector-75659699.jpg" alt="Sara M. avatar">
+          <p>"The contact form with validation and FAQ accordion were perfect JS practice. My portfolio looks professional now."</p>
+          <div class="author">- Sara M., Web Design Student</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Yonas T. avatar">
+          <p>"Responsive design finally clicked for me. Deployed my version on Netlify in minutes!"</p>
+          <div class="author">- Yonas T., Junior Dev</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2>Choose Your Plan</h2>
+      <div class="grid">
+        <div class="pricing-card">
+          <h3>Free</h3>
+          <div class="price">$0</div>
+          <ul>
+            <li>Basic template</li>
+            <li>HTML + CSS only</li>
+            <li>Community support</li>
+            <li>1 project</li>
+          </ul>
+          <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <h3>Pro</h3>
+          <div class="price">$49</div>
+          <ul>
+            <li>Full template with JS</li>
+            <li>All sections included</li>
+            <li>Priority support</li>
+            <li>Unlimited projects</li>
+            <li>Custom components</li>
+          </ul>
+          <a href="#contact" class="cta-button">Choose Pro</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">$199</div>
+          <ul>
+            <li>Everything in Pro</li>
+            <li>Backend integration</li>
+            <li>Custom design</li>
+            <li>Deployment help</li>
+            <li>1-on-1 mentoring</li>
+          </ul>
+          <a href="#contact" class="cta-button">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Do I need any tools to use this?</div>
+          <div class="faq-answer">No! Just a text editor (like VS Code) and a browser. Everything is in one HTML file.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I customize the colors and text?</div>
+          <div class="faq-answer">Absolutely! Change the CSS variables or directly edit the styles and content to match your brand.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is this mobile-friendly?</div>
+          <div class="faq-answer">Yes! It's built mobile-first with responsive grids, media queries, and a hamburger menu for small screens.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I deploy this live?</div>
+          <div class="faq-answer">Drag and drop the file to Netlify Drop, or use GitHub Pages/Vercel — free and takes seconds!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I add a real backend for the form?</div>
+          <div class="faq-answer">Yes! Replace the JS form handler with Formspree, EmailJS, or your own server later.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <div class="form-container">
+        <form id="contact-form">
+          <input type="text" id="name" placeholder="Your Full Name" required>
+          <input type="email" id="email" placeholder="Your Email Address" required>
+          <input type="text" id="subject" placeholder="Subject" required>
+          <textarea id="message" rows="8" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+          <div id="form-message"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <div id="back-to-top">↑</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TechFlow Pro Landing Page Project • Built with ❤️ using HTML, CSS & JavaScript</p>
+      <p>Made for web development students — customize and deploy your own version!</p>
+    </div>
+  </footer>
+
+ 
+</body>
+</html>

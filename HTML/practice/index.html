@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Page</title>
+  </head>
+  <body>
+    <header>
+      <div>Logo</div>
+      <nav>
+        <a href="home">Home</a>
+        <a href="news">News</a>
+        <a href="profile">Profile</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <button type="button">click here</button>
+        <p>this is a pragraph <b> bold</b></p>
+        <p>this is a pragraph <strong>strong </strong></p>
+        <p>this is a pragraph <i>Italic</i></p>
+        <p>this is a pragraph <em>element</em></p>
+        <p>this is a pragraph <del>delete</del></p>
+        <p>E=mc<sup>2</sup></p>
+        <p>H <sub>2</sub> O</p>
+        <p>this is<ins>Inserted</ins> paragraph</p>
+
+        <p>this is a pragraph <em>element</em></p>
+      </section>
+    </main>
+
+    <hr />
+
+    <form>
+      <label for="user-name">Full name</label>
+      <input type="text" placeholder="hiikaa koo" id="user-name" />
+
+      <label for="user-age">Age</label>
+      <input type="number" id="user-age" />
+
+      <label for="color"> choose your color</label>
+      <input type="color" id="color" />
+
+      <div>
+        <p>Are you good?</p>
+        <label for="yes">Yes</label>
+        <input name="good" id="yes" value="yes" type="checkbox" />
+
+        <label for="no">No</label>
+        <input name="good" id="no" value="no" type="checkbox" />
+      </div>
+
+      <div>
+        <label for="male">male</label>
+        <input id="male" name="gender" value="male" type="radio" />
+
+        <label for="female">female</label>
+        <input id="female" name="gender" value="female" type="radio" />
+      </div>
+
+      <button type="submit">submit</button>
+      <button type="reset">reset</button>
+    </form>
+    <hr />
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <hr />
+    <h2>List types</h2>
+
+    <div>
+      <div>
+        <h3>Definition List</h3>
+        <dl>
+          <dt>HTML</dt>
+          <dd>Used to structure web content</dd>
+          <dt>CSS</dt>
+          <dd>control the styling</dd>
+        </dl>
+      </div>
+
+      <div>
+        <h3>Unorder List</h3>
+
+        <ul type="square">
+          <li>Caalaa</li>
+          <li>caaltuu</li>
+          <li>Hiikaa</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Order List</h3>
+
+        <ol type="i">
+          <li>Caalaa</li>
+          <li>caaltuu</li>
+          <li>Hiikaa</li>
+        </ol>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h2>Table</h2>
+
+      <table border>
+        <caption>
+          Student information
+        </caption>
+
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>ID number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td colspan="2">Hiikaa</td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">1</td>
+            <td>Mikiyas</td>
+            <td>1413</td>
+          </tr>
+
+          <tr>
+            <td>Caalaa</td>
+            <td>3333</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h2>Media</h2>
+
+      <div>
+        <img
+          src="./file/image.png"
+          height="200"
+          width="300"
+          alt="young nf image"
+        />
+      </div>
+
+      <div>
+        <audio controls autoplay loop>
+          <source src="./file/LUBA_AMANAMAA.m4a" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div>
+        <video width="400" controls autoplay loop>
+          <source src="./file/video.mp4" type="video/mp4" />
+          <source src="movie.webm" type="video/webm" />
+          <p>Your browser doesn't support this video</p>
+        </video>
+      </div>
+    </div>
+
+    <hr />
+    <footer>
+      <p>copy right <span>2026</span></p>
+      <nav>
+        <a href="home">Home</a>
+        <a href="news">News</a>
+        <a href="profile">Profile</a>
+      </nav>
+    </footer>
+  </body>
+</html>
